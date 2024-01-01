@@ -8,7 +8,8 @@ import '../../domain/usecases/get_tasks.dart';
 
 final taskListNotifierProvider =
     StateNotifierProvider<TaskListNotifier, List<Task>>((ref) {
-  return TaskListNotifier();
+  return TaskListNotifier()
+    ..initializeTasks(); // Initialize tasks when the provider is first created
 });
 
 final taskRepositoryProvider = Provider<TaskRepository>((ref) {
